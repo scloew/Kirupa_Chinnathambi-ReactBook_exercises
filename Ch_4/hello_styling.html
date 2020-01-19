@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Styling</title>
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+  <style>
+    #container {
+      padding: 50px;
+      background: mediumslateblue;
+    }
+
+    div {
+      text-align: center;
+    }
+
+    .letter {
+      padding: 10px;
+      margin: 10px;
+      background-color: mediumspringgreen;
+      color: red;
+      display: inline-block;
+      font-family: cursive;
+      font-size: medium;
+      text-align: center;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="container"></div>
+  <script type="text/babel">
+
+    var destination = document.querySelector('#container');
+
+    class Letter extends React.Component {
+      render() {
+        return (
+          <div className='letter'>
+            {this.props.children}
+          </div>
+        );
+      }
+    }
+
+    ReactDOM.render(
+      <d1>
+        <Letter>A</Letter>
+        <Letter>B</Letter>
+        <Letter>C</Letter>
+        <Letter>D</Letter>
+        <Letter>E</Letter>
+      </d1>,
+      destination
+    );
+  </script>
+</body>
+
+</html>
