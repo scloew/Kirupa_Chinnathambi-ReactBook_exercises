@@ -44,6 +44,14 @@
         this.state = {
           count: 0
         }
+        this.increment = this.increment.bind(this);
+      }
+
+      increment(e) {
+        var incrementVal = e.shiftKey ? 10 : 1; //use boolean shift key associated with mouse event synthetic event
+        this.setState({
+          count: this.state.count + incrementVal
+        });
       }
 
       render() {
@@ -72,7 +80,7 @@
             <Counter display={this.state.count} />
             <button
               style={buttonStyle}
-              onClick={() => { this.setState({ count: this.state.count + 1 }) }}>
+              onClick={this.increment}>
               Increment
             </button>
           </div>
