@@ -1,0 +1,13 @@
+h1 {
+  font-family: fantasy;
+  text-align: center;
+  padding-top: 140px;
+  font-size: 60px;
+  margin: -15px;
+}
+
+p {
+  font-family: sans-serif;
+  color: black;
+  text-align: center;
+}

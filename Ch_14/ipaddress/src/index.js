@@ -10,4 +10,4 @@ ReactDom.render(
     <IPAddressContainer />
   </div>,
   destination
-)
+);
