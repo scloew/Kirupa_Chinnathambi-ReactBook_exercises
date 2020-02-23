@@ -34,9 +34,6 @@ export default class TodoList extends Component {
   }
 
   deleteItem(key) {
-    // var filteredItems = this.state.items.filter(function (item) {
-    //   return (item.key !== key);
-    // }
     var filteredItems = this.state.items.filter(function (item) {
       return (item.key !== key);
     })
