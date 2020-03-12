@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pick a color! Any color!</title>
+  <script src="https://unpkg.com/redux@latest/dist/redux.js"></script>
+
+</head>
+
+<body>
+  <script>
+    function addColor(value) {
+      return {
+        type: 'ADD',
+        color: value
+      };
+    }
+
+    function removeColor(value) {
+      return {
+        type: 'REMOVE',
+        color: value
+      };
+    }
+
+    function favoriteColors(state, action) {
+      if (state === undefined) {
+        state = [];
+      }
+
+      if (action.type === 'ADD') {
+        return state.concat(action.color);
+      }
+      else if (action.type === 'REMOVE') {
+        return state.filter((item) => {
+          return item !== action.color;
+        })
+      }
+      else {
+        return state;
+      }
+    }
+
+    var store = Redux.createStore(favoriteColors);
+    store.subscribe(() => { console.log(store.getState()) });
+    colors = ['blue', 'gray', 'orange', 'red', 'gray', 'teal'];
+    colors.forEach(element => {
+      store.dispatch(addColor(element));
+    });
+    store.dispatch(removeColor('gray'));
+  </script>
+</body>
+
+</html>
