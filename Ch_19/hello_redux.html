@@ -10,9 +10,9 @@
 
 <body>
   <script>
-    function addColor(value) {
+    function addColor(value) { //this kind of function is known as action creators
       return {
-        type: 'ADD',
+        type: 'ADD',//add/removeColor return our actions; all actions have a type; other fields are up to coder
         color: value
       };
     }
@@ -24,7 +24,7 @@
       };
     }
 
-    function favoriteColors(state, action) {
+    function favoriteColors(state, action) { //this is our reducer
       if (state === undefined) {
         state = [];
       }
@@ -42,7 +42,7 @@
       }
     }
 
-    var store = Redux.createStore(favoriteColors);
+    var store = Redux.createStore(favoriteColors); //create store - argument is favoriteColors reducer
     store.subscribe(() => { console.log(store.getState()) });
     colors = ['blue', 'gray', 'orange', 'red', 'gray', 'teal'];
     colors.forEach(element => {
